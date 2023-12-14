@@ -3,11 +3,9 @@ const Product=require('../models/product')
 
 exports.getAddProduct=(req, res, next) => {
     res.render('add-product', {
-      pageTitle: 'Add Product',
-      path: '/admin/add-product',
-      formsCSS: true,
-      productCSS: true,
-      activeAddProduct: true
+      // : 'add Product',pageTitle
+       path: '/admin/add-product',
+     
     });
   }
 
@@ -16,10 +14,12 @@ exports.getAddProduct=(req, res, next) => {
     //products.push({ title: req.body.title });
     const pro= new Product(req.body.title);
     
-    pro.save()
+
+    pro.save();
+    
     res.redirect('/');
   }
-  //exports.products = products;
+  //exports.products = products
 
  exports.getProducts= (req, res, next) => {
     Product.fetchAll(products=>{
