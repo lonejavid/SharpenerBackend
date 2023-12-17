@@ -44,7 +44,8 @@ static findByPk(id, cb) {
   getProductsFromFile((products) => {
     const product = products.find((p) => p.id === id);
     if (!product) {
-      return cb({ error: 'Product not found' });
+     return cb({ error: 'Product not ' });
+
     }
     cb(product);
   });
